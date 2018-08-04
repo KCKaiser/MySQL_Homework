@@ -205,8 +205,7 @@ ORDER BY count(inventory.film_id) desc;
 
 ## f. Write a query to display how much business, in dollars, each store brought in.
 SELECT * FROM sales_by_store;
-SELECT * FROM staff
-
+ 
 SELECT c.city, cy.country, concat(first_name, " ", last_name) AS 'manager', sum(p.amount) AS total_sales
 FROM payment p 
 JOIN rental r ON p.rental_id = r.rental_id 
@@ -217,7 +216,6 @@ JOIN city c ON a.city_id = c.city_id
 JOIN country cy ON c.country_id = cy.country_id
 JOIN staff m ON s.manager_staff_id = m.staff_id
 GROUP BY s.store_id order by cy.country, c.city;
-
 
 ## g. Write a query to display for each store its store ID, city, and country.
 SELECT store.store_id, city, country
